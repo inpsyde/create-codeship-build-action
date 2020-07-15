@@ -28,5 +28,5 @@ runs:
         - ${{ inputs.codeship-user }}
         - ${{ inputs.codeship-pwd }}
         - ${{ inputs.codeship-orga }}
-        - ${{ codeship-project }}
-        - ${{ codeship-project-ref }}
+        - ${{ inputs.codeship-project }}
+        - ${{ inputs.codeship-project-ref }}
