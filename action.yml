@@ -1,0 +1,32 @@
+name: 'Create Codeship build'
+description: 'A GitHub action that creates a build on Codeship via its API.'
+author: 'inpsyde.com'
+branding:
+    icon: 'upload-cloud'
+    color: 'green'
+inputs:
+    codeship-user:
+        description: 'Codeship user email'
+        required: true
+    codeship-pwd:
+        description: 'Codeship user password'
+        required: true
+    codeship-orga:
+        description: 'Codeship organization name.'
+        required: true
+    codeship-project:
+        description: 'Codeship project UUID.'
+        required: true
+    codeship-project-ref:
+        description: 'Codeship project VCS reference, in GitHub references format.'
+        required: false
+        default: 'heads/master'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+        - ${{ inputs.codeship-user }}
+        - ${{ inputs.codeship-pwd }}
+        - ${{ inputs.codeship-orga }}
+        - ${{ codeship-project }}
+        - ${{ codeship-project-ref }}
