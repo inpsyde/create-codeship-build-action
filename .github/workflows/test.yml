@@ -9,7 +9,7 @@ jobs:
             - name: Call Codeship API
               uses: ./
               with:
-                  codeship-user: ${{ secrets.INPSYDE_BOT_EMAIL }}
-                  codeship-pwd: ${{ secrets.INPSYDE_BOT_PASSWORD }}
+                  codeship-user: ${{ secrets.CODESHIP_USER }}
+                  codeship-pwd: ${{ secrets.CODESHIP_PWD }}
                   codeship-orga: 'inpsyde'
                   codeship-project: 'd7ef9d30-e669-0136-85a6-426e393dcd61'

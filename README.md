@@ -15,21 +15,21 @@ it is used as dependency in the repository connected to Codeship.
 ```yaml
 on: [push]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    if: "contains(github.event.head_commit.message, 'codeship')"
-    name: Build on Codeship
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Call Codeship API
-        uses: inpsyde/create-codeship-build-action@1.0.0
-        with:
-          codeship-user: 'jane.doe@example.com'
-          codeship-pwd: ${{ secrets.CODESHIP_USER_PASS }}
-          codeship-orga: 'my-organization'
-          codeship-project: 'b419e642-c6e2-11ea-87d0-0242ac130003'
-          codeship-project-ref: 'heads/master'
+    build:
+        runs-on: ubuntu-latest
+        if: "contains(github.event.head_commit.message, 'codeship')"
+        name: Build on Codeship
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Call Codeship API
+              uses: inpsyde/create-codeship-build-action@1.0.0
+              with:
+                  codeship-user: 'jane.doe@example.com'
+                  codeship-pwd: ${{ secrets.CODESHIP_USER_PASS }}
+                  codeship-orga: 'my-organization'
+                  codeship-project: 'b419e642-c6e2-11ea-87d0-0242ac130003'
+                  codeship-project-ref: 'heads/master'
 ```
 
 Having a workflow like this in a GitHub repo, will trigger a build on Codeship for every push having
@@ -75,3 +75,6 @@ And in that case the project UUID is `b419e642-c6e2-11ea-87d0-0242ac130003`.
 The branch in the repository connected to Codeship project to trigger the build for.
 **Optional**, by default `heads/master`.
 It must be in the format of GitHub references, see https://developer.github.com/v3/git/refs/
+
+Note that is possible to use `${{ github.ref }}` to dynamically set the value to the branch the 
+workflow is running (see https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context).
