@@ -8,4 +8,4 @@ export CODESHIP_ORGA=$3
 export CODESHIP_PROJECT=$4
 export CODESHIP_REF=$5
 
-php ./action.php
+php /action.php
