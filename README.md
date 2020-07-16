@@ -26,7 +26,7 @@ jobs:
     ​      - name: Checkout
             uses: actions/checkout@v2
     ​      - name: Call Codeship API
-            uses: inpsyde/create-codeship-build-action@1.0.0
+            uses: inpsyde/create-codeship-build-action@v1
             with:
                 codeship-user: 'jane.doe@example.com'
                 codeship-pwd: ${{ secrets.CODESHIP_USER_PASS }}
