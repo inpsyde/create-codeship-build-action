@@ -10,6 +10,9 @@ pushed to that repository.
 It might be desirable to trigger a build when changes happen in _another_ repository, e. g. one that
 it is used as dependency in the repository connected to Codeship.
 
+This action uses the ["Create Build" endpoint in Codeship API](https://apidocs.codeship.com/v2/builds/create-build)
+to trigger a Codeship build.
+
 ## Usage Example
 
 ```yaml
@@ -78,3 +81,13 @@ It must be in the format of GitHub references, see https://developer.github.com/
 
 Note that is possible to use `${{ github.ref }}` to dynamically set the value to the branch the 
 workflow is running (see https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context).
+
+## License
+
+Copyright (c) 2020 Inpsyde GmbH
+
+This code is licensed under the [MIT License](LICENSE).
+
+---
+
+The team at [Inpsyde](https://inpsyde.com) is engineering the Web since 2006.
