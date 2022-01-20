@@ -2,6 +2,9 @@
 
 A GitHub action that creates a build on Codeship via its API.
 
+## UNMAINTAINED
+**Note:** This version of the plugin is not maintained anymore. 
+
 ## Why
 
 Codeship allows connecting a VCS repository so that a build is triggered every time something is 
